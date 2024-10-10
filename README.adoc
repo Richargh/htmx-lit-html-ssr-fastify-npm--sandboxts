@@ -1,0 +1,31 @@
+= Htmx with Lit-Html SSR template rendering and Fastify backend
+
+== Features
+
+* link:https://htmx.org/[Htmx]
+* link:https://github.com/lit/lit/tree/main/packages/lit-html[Lit-Html]
+* link:https://fastify.dev/[Fastify]
+* TypeScript
+
+== Preconditions
+
+* Install the node version from link:.nvmrc[] via link:https://github.com/Schniz/fnm[fnm] (or link:https://github.com/nvm-sh/nvm[nvm]]) by calling `fnm use`
+
+== Usage
+
+* Start server `npm run start`
+* Start server with auto-restart `npm run serve`
+
+== Created via
+
+* `npm init -y`, [configure npm](https://docs.npmjs.com/cli/v9/configuring-npm/package-json#private) by setting `"private": true` and engines to same node version as in the link:.nvmrc[]
+* `npm i fastify`
+* `npm i -D typescript @types/node`
+* `npm i vite -D`
+* `npx tsc --init` and configure `outdir: "dist"`, `"target": "es2017"` and other smaller things.
+* `mkdir src && touch src/server.ts` and put code from link:https://www.fastify.io/docs/latest/Reference/TypeScript/#getting-started[fastify TypeScript getting started].
+* Add `"build": "tsc"` and `"start": "ts-node src/server.ts"` to [package.json](package.json).
+* `npm i -D vitest` and add `"test": "vitest"` as well as `"test:watch": "vitest --watch"`
+* `mkdir tests && touch tests/pong.api.test.ts`
+* `npm i lit-html @lit-labs/ssr`
+* `npm i -D nodemon` and add `"serve": "nodemon --ext ts --exec 'tsc && node dist/src/server.js'"`
