@@ -18,5 +18,9 @@
 !tsconfig.json
 
 ## Code
+!distribute-public.mjs
 !src/
 !tests
+
+### but ignore public
+src/public

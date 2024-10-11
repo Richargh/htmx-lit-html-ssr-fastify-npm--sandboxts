@@ -6,9 +6,10 @@
   "main": "dist/server.js",
   "type": "module",
   "scripts": {
+    "prebuild": "./distribute-public.mjs src/public",
     "build": "tsc",
-    "start": "tsc && node dist/src/server.js",
-    "serve": "nodemon --ext ts --exec 'tsc && node dist/src/server.js'",
+    "start": "tsc && ./distribute-public.mjs dist/src/public && node dist/src/server.js",
+    "serve": "nodemon --ext ts --exec 'npm start'",
     "test": "vitest",
     "test:watch": "vitest --watch"
   },
@@ -17,8 +18,11 @@
     "npm": "= 10"
   },
   "dependencies": {
+    "@fastify/static": "^8.0.1",
     "@lit-labs/ssr": "^3.2.2",
+    "@picocss/pico": "^2.0.6",
     "fastify": "^5.0.0",
+    "htmx.org": "^2.0.3",
     "lit-html": "^3.2.1"
   },
   "devDependencies": {

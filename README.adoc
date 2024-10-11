@@ -29,3 +29,5 @@
 * `mkdir tests && touch tests/pong.api.test.ts`
 * `npm i lit-html @lit-labs/ssr`
 * `npm i -D nodemon` and add `"serve": "nodemon --ext ts --exec 'tsc && node dist/src/server.js'"`
+* `npm i htmx.org@2.0.3`
+* `npm i @fastify/static`
