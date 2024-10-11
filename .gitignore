@@ -17,6 +17,9 @@
 ## TypeScript
 !tsconfig.json
 
+## License
+!UNLICENSE
+
 ## Code
 !distribute-public.mjs
 !src/
